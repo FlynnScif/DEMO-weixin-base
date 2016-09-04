@@ -4,6 +4,7 @@ import web
 import lxml
 import time
 import os
+from lxml import etree
 
 
 class WeixinInterface:
@@ -36,5 +37,18 @@ class WeixinInterface:
 
 
     def POST(self): 
-        return '1'
+        str_xml = web.data() #获得post来的数据 
+        xml = etree.fromstring(str_xml)#进行XML解析 
+        content = xml.find("Content").text 
+        msgType = xml.find("MsgType").text 
+        fromUser = xml.find("FromUserName").text 
+        toUser = xml.find("ToUserName").text 
+        retun self.render.reply_text(fromUser,toUser,int(time.time()),content)
+        #if msgType == 'text':
+        #    content = xml.find("Content").text
+        #    return self.render.reply_text(fromUser,toUser,int(time.time()), content)
+        #elif msgType == 'image':
+        #    pass
+        #else:
+        #    pass
 
