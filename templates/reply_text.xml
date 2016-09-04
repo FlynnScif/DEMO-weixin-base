@@ -1,4 +1,5 @@
 $def with (toUser,fromUser,createTime,content)
+<?xml version="1.0"?>
 <xml>
 <ToUserName><![CDATA[$toUser]]></ToUserName>
 <FromUserName><![CDATA[$fromUser]]></FromUserName>
