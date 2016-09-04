@@ -36,5 +36,5 @@ class WeixinInterface:
 
 
     def POST(self): 
-        retun '1'
+        return '1'
 
