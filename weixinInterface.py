@@ -21,7 +21,7 @@ class WeixinInterface:
         nonce = data.nonce
         echostr = data.echostr
         #自己的token
-        token = "9a78186925453e0dfd38532724bcacb1" #这里改写你在微信公众平台里输入的token
+        token = "flynnscifo" #这里改写你在微信公众平台里输入的token
         #字典序排序
         list = [token,timestamp,nonce]
         list.sort()
@@ -33,6 +33,5 @@ class WeixinInterface:
         #如果是来自微信的请求，则回复echostr
         if hashcode == signature:
             return echostr
-        else
-            return echostr
+
 
